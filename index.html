@@ -1,0 +1,54 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Number of Days Left Until the Wedding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+    <h1 id="h1" >I love you Jordin Bryant!</h1>
+
+<script type="text/javascript">
+var end = new Date('10/05/2019 1:0 AM');
+
+var _second = 1000;
+var _minute = _second * 60;
+var _hour = _minute * 60;
+var _day = _hour * 24;
+var timer;
+
+function showRemaining() {
+    var now = new Date();
+    var distance = end - now;
+    if (distance < 0) {
+
+        clearInterval(timer);
+        document.getElementById('countdown').innerHTML = 'Married!';
+
+        return;
+    }
+    var days = Math.floor(distance / _day);
+    var hours = Math.floor((distance % _day) / _hour);
+    var minutes = Math.floor((distance % _hour) / _minute);
+    var seconds = Math.floor((distance % _minute) / _second);
+
+    document.getElementById('countdown').innerHTML = "Only " + days + ' Days ';
+    document.getElementById('countdown').innerHTML += hours + ' Hours ';
+    document.getElementById('countdown').innerHTML += minutes + ' Minutes ';
+    document.getElementById('countdown').innerHTML += seconds + ' Seconds';
+}
+
+timer = setInterval(showRemaining, 1000);
+</script>
+
+<div id="countdown"></div>
+<h2 id="h2">Until We Get Married!</h2>
+    <div id=img>
+        <img src="Assets/engagment.jpg">
+    </div>
+</body>
+</html>
